@@ -30,6 +30,7 @@ submitBtn.onclick = (e) => {
     list.appendChild(deleteBtn);
 
     deleteBtn.onclick = () => {
+      document.querySelector(".blank").innerHTML = "";
       deleteBtn.parentNode.parentNode.removeChild(deleteBtn.parentNode);
     };
 

@@ -15,7 +15,7 @@ submitBtn.onclick = (e) => {
   if (inputName.value === "") {
     document.querySelector(
       ".blank"
-    ).innerHTML = `<h2>Form cannot be blank</h2>`;
+    ).innerHTML = `<h4>Form cannot be blank</h4>`;
   } else {
     document.querySelector(".blank").innerHTML = "";
     let list = document.createElement("li");

@@ -42,3 +42,19 @@ button {
   justify-content: space-between;
   align-items: center;
 }
+
+.blank {
+  text-align: center;
+}
+
+@media (max-width: 1004px) {
+  .input {
+    width: 70%;
+  }
+}
+
+@media (max-width: 697px) {
+  .input {
+    width: 50%;
+  }
+}

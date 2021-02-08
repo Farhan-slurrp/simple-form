@@ -11,21 +11,29 @@ const submitBtn = document.querySelector(".submit");
 
 submitBtn.onclick = (e) => {
   e.preventDefault();
-  let list = document.createElement("li");
-  list.classList.add("list-group-item");
 
-  let deleteBtn = document.createElement("button");
-  deleteBtn.classList.add("btn");
-  deleteBtn.classList.add("btn-danger");
-  deleteBtn.textContent = "x";
+  if (inputName.value === "") {
+    document.querySelector(
+      ".blank"
+    ).innerHTML = `<h2>Form cannot be blank</h2>`;
+  } else {
+    document.querySelector(".blank").innerHTML = "";
+    let list = document.createElement("li");
+    list.classList.add("list-group-item");
 
-  list.innerHTML = inputName.value;
-  list.appendChild(deleteBtn);
+    let deleteBtn = document.createElement("button");
+    deleteBtn.classList.add("btn");
+    deleteBtn.classList.add("btn-danger");
+    deleteBtn.textContent = "x";
 
-  deleteBtn.onclick = () => {
-    deleteBtn.parentNode.parentNode.removeChild(deleteBtn.parentNode);
-  };
+    list.innerHTML = inputName.value;
+    list.appendChild(deleteBtn);
 
-  document.querySelector("ul").appendChild(list);
-  inputName.value = "";
+    deleteBtn.onclick = () => {
+      deleteBtn.parentNode.parentNode.removeChild(deleteBtn.parentNode);
+    };
+
+    document.querySelector("ul").appendChild(list);
+    inputName.value = "";
+  }
 };
